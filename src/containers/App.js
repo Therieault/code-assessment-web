@@ -1,14 +1,15 @@
 import React from 'react'
 import ProductsContainer from './ProductsContainer'
-import CartContainer from './CartContainer'
+import ModalContainer from './ModalContainer'
 
 const App = () => (
-  <div>
-    <h2>Shopping Cart Example</h2>
-    <hr/>
+  <div className='acme-store'>
+    <div className='title-bar'>
+      <ModalContainer />
+      <span className='title'>Acme Store</span>
+    </div>
+    <hr className='line'/>
     <ProductsContainer />
-    <hr/>
-    <CartContainer />
   </div>
 )
 

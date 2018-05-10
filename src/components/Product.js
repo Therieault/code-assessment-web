@@ -1,10 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import image from '../assets/Bitmap.jpg'
+require('../styles/styles.css')
 
-const Product = ({ price, inventory, title }) => (
-  <div>
-    {title} - &#36;{price}{inventory ? ` x ${inventory}` : null}
+
+var Product = ({ price, inventory, title }) => (
+  <div className='product-container'>
+   <img className='product-image' src = {image} alt='product' width='423'/>
+    <div className ='product-info'>
+      <div className ='product-headline'>
+        <span className='product-title'>{title}</span>
+        <span className= 'product-price'>  &#36;{price}</span>
+      </div>
+      <div className='product-inventory-container'>
+        <span className='product-inventory'> {inventory ? ` ${inventory} REMAINING`: null} </span>
+    </div>
   </div>
+</div>
 )
 
 Product.propTypes = {

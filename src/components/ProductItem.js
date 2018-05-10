@@ -1,17 +1,20 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Product from './Product'
+import React from 'react';
+import PropTypes from 'prop-types';
+import Product from './Product';
+require('../styles/styles.css');
+
 
 const ProductItem = ({ product, onAddToCartClicked }) => (
-  <div style={{ marginBottom: 20 }}>
+  <div className='product-container' style={{ marginBottom: 20 }}>
     <Product
       title={product.title}
       price={product.price}
       inventory={product.inventory} />
     <button
+      className ='cta-button'
       onClick={onAddToCartClicked}
       disabled={product.inventory > 0 ? '' : 'disabled'}>
-      {product.inventory > 0 ? 'Add to cart' : 'Sold Out'}
+      {product.inventory > 0 ? 'ADD TO CART' : 'ADD TO CART'}
     </button>
   </div>
 )
